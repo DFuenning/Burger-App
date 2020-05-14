@@ -5,7 +5,12 @@ USE burgers_db;
 DROP TABLE IF EXISTS burgers;
 
 -- Create the burgers table which will contain     id(int and is the primarykey), burger_name(varchar), devoured(boolean)
-CREATE TABLE burgers (
 
+  
+CREATE TABLE burgers (
+    id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    burger_name varchar(150) NOT NULL,
+    devoured BOOL NOT NULL
     
 );
+

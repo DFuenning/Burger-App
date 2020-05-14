@@ -9,9 +9,31 @@ router.get("/", function(req, res) {
 });
 
 router.get("/burgers", function(req, res) {
-  //hint: burger.all
+  burger.all(function(burgerdata) {
+    var hbsObject = {
+      burger_data: burgerdata
+    };
+    console.log(hbsObject);
+    res.render("index", hbsObject);
+  });
 });
 
+
+router.post("/burgers/create", function(req, res) {
+  burger.create(req.body.burger_name, function(result) {
+    // Send back the ID of the new quote
+    console.log(result)
+    res.redirect("/");
+  });
+});
+
+router.put("/burgers/:id", function(req, res) {
+  burger.update(req.params.id, function(result) {
+    console.log(result)
+    res.sendStatus(200)
+  })
+  
+});
 // post route -> back to index
   //hint: burger.create
 
