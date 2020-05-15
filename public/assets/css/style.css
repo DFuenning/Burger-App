@@ -1,7 +1,7 @@
 body {
   width: 99%;
   height: 900px;
-  background-color: #fc6;
+  background-color: rgb(221, 217, 217);
 }
 
 #top-bar {
@@ -48,7 +48,7 @@ body {
   font-size: 38px;
 }
 
-.task {
+#task {
   border-color: black;
   border-style: solid;
   border-width: 3px;
